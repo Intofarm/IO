@@ -1,0 +1,125 @@
+
+body {
+    text-align: left;
+    text-justify: auto;
+    background-image: url(ranch.png);
+}
+
+body h2{
+    text-align:center;
+}
+
+body p strong{
+    text-align:left;
+}
+
+body h3{
+    text-align:center;
+ }
+
+header div img{
+    height: 200px;
+    padding: 30px;
+    cursor: pointer;
+    
+    }
+    
+header p{
+    text-align:center;
+    
+    }
+   
+    
+.plan1 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+        
+	width:360px;
+	border:1px greenyellow;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px gold;
+	margin:20px;
+        margin-left: 10px;
+        text-align: right;
+        border-radius: 20px;
+}
+
+.plan2 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+        
+	width:360px;
+	border:1px greenyellow;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px gold;
+	margin:20px;
+        margin-left: 10px;
+        text-align: right;
+        border-radius: 20px;
+}
+
+.plan3 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+        
+	width:360px;
+	border:1px greenyellow;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px gold;
+	margin:20px;
+        margin-left: 10px;
+        text-align: right;
+        border-radius: 20px;
+}
+
+.plan4 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+        
+	width:360px;
+	border:1px greenyellow;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px gold;
+	margin:20px;
+        margin-left: 10px;
+        text-align: right;
+        border-radius: 20px;
+}
+
+.plan5 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+        
+	width:360px;
+	border:1px greenyellow;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px gold;
+	margin:20px;
+        margin-left: 10px;
+        text-align: right;
+        border-radius: 20px;
+}
+
+.plan6 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+        
+	width:360px;
+	border:1px greenyellow;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px gold;
+	margin:20px;
+        margin-left: 10px;
+        text-align: right;
+        border-radius: 20px;
+}
+
+.fondo {
+    border-radius: 20px;
+}

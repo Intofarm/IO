@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+body {
+    text-align: center;
+    text-justify: auto;
+    background-image: repeating-linear-gradient(wheat, greenyellow, yellow, whitesmoke);
+}
+body img{
+    border-radius: 20px;
+}
+.img {
+    width: 50px;
+    height: 50px;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background-image: repeating-linear-gradient(whitesmoke, greenyellow, darkgreen);
+}
+header div img{
+    height: 30px;
+    padding: 10px;
+    padding-right: 1px;
+    cursor: pointer;
+}
+header div h3{
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;     
+    padding: 10px;
+    color: black;
+    padding-left: 10px;
+    cursor: pointer;
+    animation: mymove 5s infinite;
+}
+main{
+    
+    display: flex;
+}
+.menu-social{
+    
+    width: 100px;
+    padding-top: 30px;
+}
+.menu-social2{
+    margin-left: -90px;
+}
+
+.menu-social li{
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:10px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;     
+    margin: 5px;
+    width: 90%;
+    padding: 15px;
+    padding-left: 0px;
+    text-align: center;
+    text-shadow: 5px 5px 10px greenyellow;
+    color: #3CB043;
+    border-radius: 20px;
+}
+.menu-social li:hover{
+    transform: translateY(10px);
+    background-color: greenyellow;
+}
+.contents{
+    padding: 50px;
+    width: 100%;
+    padding-top: 10px;
+}
+.menu{
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;     
+    padding: 15px;
+    width: 100%;
+    border-radius: 20px;
+    font: 18px Times New Ruman;
+}
+.menu a{
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:10px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;    
+    padding: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    text-shadow: 5px 5px 10px #DFFF00;
+    border-radius: 20px;
+}
+.menu a:hover{
+    transform: translateY(10px);
+    background-color: greenyellow;
+    padding: 30px;
+    
+}
+
+
+
+.event {
+
+}
+
+.intofarm {
+
+}
+.spanish{
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;    
+    width: 10%;
+    margin-left: 1435px;
+    
+}
+
+.english{
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;    
+    margin-left: 20px;
+}

@@ -1,0 +1,241 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+body {
+    text-align: center;
+    
+    
+    background-image: repeating-linear-gradient(gold,greenyellow, darkgreen, gold );
+    
+}   
+
+
+header div img{
+    height: 200px;
+    padding: 30px;
+    position: relative;
+    cursor: pointer;
+    align-self: flex-start;
+    border-radius: 20px;
+}
+div img{
+    border-radius: 20px;
+    }    
+header p{
+    
+    text-align:justify;
+    
+    margin: 10px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+header p strong{
+    
+    margin: 10px;
+    margin-left: 1px;
+    color: black;
+    
+}
+
+header br{
+    width: 100px;
+    margin: 10px;
+    margin-left: 500px;
+    margin-right: 500px;
+    text-align: justify;
+    text-shadow: 5px 5px 10px green;
+}
+
+.plan1 {
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    width:250px;
+    margin:10px;
+    margin-left: 10px;
+    margin-right: 5px;
+    text-align: justify;
+    text-decoration: #aaaa26;
+    border-radius: 20px;
+    box-shadow: 20px 20px 10px grey;
+    
+}
+
+.star1{
+    width: 5%;
+    height: 5%;
+    margin: 50px;
+    margin-right: 1350px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 10px grey;
+}
+
+.BTCcoin{
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    width:200px;
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;
+    margin:10px;
+    margin-left: 10px;
+    margin-right: 80px;
+    text-align: justify;
+    text-decoration: #aaaa26;
+    border-radius: 20px;
+    align-items: flex-start;
+    box-shadow: 20px 20px 10px grey;
+}
+.tether{
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    width:250px;
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;
+    margin:10px;
+    margin-left: 10px;
+    margin-left: 70px;
+    text-align: justify;
+    text-decoration: #aaaa26;
+    align-items: flex-start;
+    border-radius: 20px;
+    box-shadow: 20px 20px 10px grey;
+}
+
+.pig {
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;    
+    margin-right: 475px;
+    width: 200px;
+    height: 150px;
+    align-items: flex-start;
+    border-radius: 20px;
+    box-shadow: 20px 20px 10px grey;
+}
+.eggs {
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;   
+    margin-left: 30px;
+    width: 200px;
+    height: 150px;
+    align-items: flex-start;
+    border-radius: 20px;
+    box-shadow: 20px 20px 10px grey;
+}
+h1{
+    color: #3CB043;
+    
+}
+
+.price {
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;    
+    background:none;
+    box-shadow: 20px 20px 10px grey;
+    width:360px;
+    border-radius: 20px;
+    margin:10px;
+    margin-left: 150px;
+    text-align: center;
+    text-decoration: #aaaa26;
+    margin-top: 15px;
+    color: black;
+    font: 18px Times New Roman;
+    
+}
+
+.DESCRIPTION {
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;    
+    background:none;
+    box-shadow: 20px 20px 10px grey;
+    width:360px;
+    border-radius: 20px;
+    margin:10px;
+    margin-left: 530px;
+    text-align: justify;
+    text-decoration: #aaaa26;
+    margin-top: -60px;
+    font: 18px Times New Roman;
+    
+}
+
+
+.INCOME {
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;    
+    background:none;
+    box-shadow: 20px 20px 10px grey;
+    width:360px;
+    border-radius: 20px;
+    margin:10px;
+    margin-left: 920px;
+    text-align: center;
+    text-decoration: #aaaa26;
+    margin-top: -45px;
+    font: 18px Times New Roman;
+    
+}
+.CHARATERISTICS {
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;    
+    background:none;
+    box-shadow: 20px 20px 50px grey;
+    width:360px;
+    margin:10px;
+    margin-left: 165px;
+    text-align: center;
+    text-decoration: #aaaa26;
+    border-radius: 20px;
+    margin-top: -50px;
+    font: 18px Times New Roman;
+    box-shadow: 20px 20px 50px grey;
+}
+.ACCUMULATOR {
+    background: repeating-linear-gradient(black, gold, greenyellow, black);
+    border:1px darkgoldenrod;	
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    box-shadow:inset 0 0 10px #DFFF00;    
+    background:none;
+    box-shadow: 20px 20px 50px grey;
+    width:360px;
+    color: black;
+    margin:10px;
+    margin-left: 930px;
+    text-align: center;
+    text-decoration: black;
+    margin-top: 30px;
+    border-radius: 20px;
+    font: 18px Times New Roman;
+    
+}

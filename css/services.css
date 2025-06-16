@@ -1,0 +1,141 @@
+
+body{
+    
+         
+}
+
+body h2{
+    text-align-last: center;
+}
+
+body h3{
+    text-align-last: center;
+}
+header div img{
+    margin: 20px;
+    height: 200px;
+    padding: 30px;
+    cursor: pointer;
+    
+    }
+    
+header strong{
+    font: 20px Times New Ruman;
+    
+    color: #3CB043;
+    }
+header p{
+    
+    margin-left: 610px;
+    
+    font: 22px Times New Ruman Black;
+    
+    }
+
+header br{
+    margin-left: 100px;
+    
+    font: 20px Times New Ruman;
+    
+    }    
+.plan1 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+	width:360px;
+	border:1px darkgoldenrod;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px white;
+	margin:10px;
+        margin-left: 10px;
+        text-align: center;
+        text-decoration: #aaaa26;
+        border-radius: 20px;
+        box-shadow: 20px 20px 10px grey;
+        clear: none;
+}
+
+.plan2 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+	width:360px;
+	border:1px darkgoldenrod;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px white;
+	margin:10px;
+        margin-left: 10px;
+        text-align: center;
+        text-decoration: #aaaa26;
+        border-radius: 20px;
+        box-shadow: 20px 20px 10px grey;
+}
+
+.plan3 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+	width:360px;
+	border:1px darkgoldenrod;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px white;
+	margin:10px;
+        margin-left: 10px;
+        text-align: center;
+        text-decoration: #aaaa26;
+        border-radius: 20px;
+        box-shadow: 20px 20px 10px grey;
+}
+
+.plan4 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+	width:360px;
+	border:1px darkgoldenrod;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px white;
+	margin:10px;
+        margin-left: 10px;
+        text-align: center;
+        text-decoration: #aaaa26;
+        border-radius: 20px;
+        box-shadow: 20px 20px 10px grey;
+}
+
+.plan5 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+	width:360px;
+	border:1px darkgoldenrod;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px white;
+	margin:10px;
+        margin-left: 10px;
+        text-align: center;
+        text-decoration: #aaaa26;
+        border-radius: 20px;
+        box-shadow: 20px 20px 10px grey;
+}
+
+.plan6 {
+        background: repeating-linear-gradient(black, gold, greenyellow, black);
+	width:360px;
+	border:1px darkgoldenrod;	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:inset 0 0 10px white;
+	margin:10px;
+        margin-left: 10px;
+        text-align: center;
+        text-decoration: #aaaa26;
+        border-radius: 20px;
+        box-shadow: 20px 20px 10px grey;
+}
+
+.ranch {
+    border-radius: 20px;
+
+}
