@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>INTOFARM© - Investment Plans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #388E3C;
+            --secondary: #FFC107;
+            --accent: #FF5722;
+            --dark: #263238;
+            --light: #f5f5f5;
+            --gray: #757575;
+            --white: #ffffff;
+            --success: #8BC34A;
+            --warning: #FF9800;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0;
+        }
+
+        .hero-section {
+            position: relative;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 30px;
+            color: white;
+        }
+
+        .hero-overlay h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-overlay h3 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-overlay p {
+            max-width: 600px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .plans-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .plans-header h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .plans-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .plan {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .plan-image-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+
+        .plan-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .plan:hover .plan-image {
+            transform: scale(1.05);
+        }
+
+        .plan-content {
+            padding: 25px;
+        }
+
+        .plan-title {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .plan-details {
+            margin-top: 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 500;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-label i {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .detail-value {
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .price {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .multiplier {
+            background: var(--primary);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .referral-note {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 5px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .income-highlight {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .plan-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .action-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .invest-btn {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .invest-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .details-btn {
+            background: var(--white);
+            color: var(--primary-dark);
+            border: 2px solid var(--primary);
+        }
+
+        .details-btn:hover {
+            background: #e8f5e9;
+        }
+
+        @media (max-width: 768px) {
+            .plans-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-overlay h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-overlay h3 {
+                font-size: 1.5rem;
+            }
+            
+            .plans-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+            
+            .hero-overlay {
+                padding: 20px;
+            }
+            
+            .plan {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+    
+<body> 
+    <div class="container">
+        <div class="hero-section">
+            <img class="hero-image" src="img/miniranch.png" alt="IntoFarm Ranch"> 
+            <div class="hero-overlay">
+                <h2>Standard or Premium</h2>
+                <h3>Investments Packages</h3>
+                <p>Start your agricultural investment journey with our carefully designed packages</p>
+            </div>
+        </div>
+        
+        <div class="plans-header">
+            <h2>Choose Your Investment Plan</h2>
+            <p>Select the package that best fits your financial goals and start earning today</p>
+        </div>
+        
+        <div class="plans-container">
+            <!-- Plan 1 -->
+            <div class="plan">
+                <div class="plan-badge">Starter</div>
+                <div class="plan-image-container">
+                    <a href="Plan1.html"><img class="plan-image" src="img/ranch.png" alt="Mini Ranch"></a>
+                </div>
+                <div class="plan-content">
+                    <h3 class="plan-title">RANCH</h3>
+                    <div class="plan-details">
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-tag"></i> PRICE:</span>
+                            <span class="detail-value price">$20</span>
+                        </div>
+                        <p class="referral-note">or invite two friends</p>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-egg"></i> PRODUCT:</span>
+                            <span class="detail-value">150 eggs</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-coins"></i> INCOME:</span>
+                            <span class="detail-value income-highlight">$1 daily</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-chart-line"></i> MULTIPLIER:</span>
+                            <span class="detail-value">N/A</span>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <a href="Plan1.html" class="action-btn invest-btn">Invest Now</a>
+                        <a href="Plan1.html" class="action-btn details-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Plan 2 -->
+            <div class="plan">
+                <div class="plan-badge">Popular</div>
+                <div class="plan-image-container">
+                    <a href="Plan2.html"><img class="plan-image" src="img/chacra.png" alt="Chacra"></a>
+                </div>
+                <div class="plan-content">
+                    <h3 class="plan-title">CHACRA</h3>
+                    <div class="plan-details">
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-tag"></i> PRICE:</span>
+                            <span class="detail-value price">$100</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-egg"></i> PRODUCT:</span>
+                            <span class="detail-value">900 eggs</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-coins"></i> INCOME:</span>
+                            <span class="detail-value income-highlight">$90 monthly</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-chart-line"></i> MULTIPLIER:</span>
+                            <span class="detail-value">N/A</span>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <a href="Plan2.html" class="action-btn invest-btn">Invest Now</a>
+                        <a href="Plan2.html" class="action-btn details-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Plan 3 -->
+            <div class="plan">
+                <div class="plan-badge">Value</div>
+                <div class="plan-image-container">
+                    <a href="Plan3.html"><img class="plan-image" src="img/standard.png" alt="Standard"></a>
+                </div>
+                <div class="plan-content">
+                    <h3 class="plan-title">TUNE</h3>
+                    <div class="plan-details">
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-tag"></i> PRICE:</span>
+                            <span class="detail-value price">$400</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-egg"></i> PRODUCT:</span>
+                            <span class="detail-value">3600 eggs</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-coins"></i> INCOME:</span>
+                            <span class="detail-value income-highlight">$240 monthly</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-chart-line"></i> MULTIPLIER:</span>
+                            <span class="detail-value">N/A</span>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <a href="Plan3.html" class="action-btn invest-btn">Invest Now</a>
+                        <a href="Plan3.html" class="action-btn details-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Plan 4 -->
+            <div class="plan">
+                <div class="plan-badge">Premium</div>
+                <div class="plan-image-container">
+                    <a href="Plan4.html"><img class="plan-image" src="img/tune.png" alt="Classic"></a>
+                </div>
+                <div class="plan-content">
+                    <h3 class="plan-title">PIGGY VERMUT</h3>
+                    <div class="plan-details">
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-tag"></i> PRICE:</span>
+                            <span class="detail-value price">$800</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-egg"></i> PRODUCT:</span>
+                            <span class="detail-value">7200 eggs</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-coins"></i> INCOME:</span>
+                            <span class="detail-value income-highlight">$360 monthly</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-chart-line"></i> MULTIPLIER:</span>
+                            <span class="detail-value"><span class="multiplier">x3</span></span>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <a href="Plan4.html" class="action-btn invest-btn">Invest Now</a>
+                        <a href="Plan4.html" class="action-btn details-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Plan 5 -->
+            <div class="plan">
+                <div class="plan-badge">Elite</div>
+                <div class="plan-image-container">
+                    <a href="Plan5.html"><img class="plan-image" src="img/vermut.png" alt="Vermut"></a>
+                </div>
+                <div class="plan-content">
+                    <h3 class="plan-title">POULTRY JABALI</h3>
+                    <div class="plan-details">
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-tag"></i> PRICE:</span>
+                            <span class="detail-value price">$1500</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-egg"></i> PRODUCT:</span>
+                            <span class="detail-value">16500 eggs</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-coins"></i> INCOME:</span>
+                            <span class="detail-value income-highlight">$660 monthly</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-chart-line"></i> MULTIPLIER:</span>
+                            <span class="detail-value"><span class="multiplier">x3</span></span>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <a href="Plan5.html" class="action-btn invest-btn">Invest Now</a>
+                        <a href="Plan5.html" class="action-btn details-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Plan 6 -->
+            <div class="plan">
+                <div class="plan-badge">VIP</div>
+                <div class="plan-image-container">
+                    <a href="Plan6.html"><img class="plan-image" src="img/poultry.png" alt="Poultry"></a>
+                </div>
+                <div class="plan-content">
+                    <h3 class="plan-title">POULTRY LEGHORN</h3>
+                    <div class="plan-details">
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-tag"></i> PRICE:</span>
+                            <span class="detail-value price">$3000</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-egg"></i> PRODUCT:</span>
+                            <span class="detail-value">36000 eggs</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-coins"></i> INCOME:</span>
+                            <span class="detail-value income-highlight">$1200 monthly</span>
+                        </div>
+                        
+                        <div class="detail-row">
+                            <span class="detail-label"><i class="fas fa-chart-line"></i> MULTIPLIER:</span>
+                            <span class="detail-value"><span class="multiplier">x3</span></span>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <a href="Plan6.html" class="action-btn invest-btn">Invest Now</a>
+                        <a href="Plan6.html" class="action-btn details-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

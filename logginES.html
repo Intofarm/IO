@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>INTOFARM©</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .label {
+            font-weight: bold;
+            margin-right: 10px;
+            width: 120px;
+        }
+        .input-field {
+            width: 100px;
+            padding: 6px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .checkbox-label {
+            margin-left: 5px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin: 15px 0 5px 0;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 10px 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #startBtn {
+            background-color: #2196F3;
+        }
+        #stopBtn {
+            background-color: #f44336;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .win {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        .lose {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+        .result-display {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .result-digit {
+            width: 30px;
+            height: 40px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-radius: 4px;
+        }
+        .stats {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9e9e9;
+            border-radius: 4px;
+        }
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        .speed-control {
+            width: 200px;
+            margin: 10px 0;
+        }
+        .center-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .bet-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .profit-loss-inputs {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1 style="text-align: center;">Bienvenidos!</h1>
+        
+        <div class="form-row">
+            <div class="label">BET AMOUNT</div>
+            <input type="text" class="input-field" maxlength="12" id="baseBet" value="0.00000025">
+        </div>
+        
+        <div class="form-row">
+            <div class="label">MAX BET/WIN</div>
+            <input type="text" class="input-field" maxlength="5" id="maxBetWin" value="20">
+        </div>
+        
+        <div class="form-row">
+            <div class="label">BET ODDS</div>
+            <input type="text" class="input-field" maxlength="4" id="betOdds" value="2.00">
+            <div class="label">NO. OF ROLLS</div>
+            <input type="text" class="input-field" maxlength="12" id="numRolls" value="25502">
+        </div>
+        
+        <div class="center-section">
+            <div class="label">SPEED</div>
+            <input type="range" id="speedControl" class="speed-control" min="50" max="500" value="450" step="50">
+            <span id="speedValue">x450</span>
+            
+            <div class="result-display" id="resultDisplay">
+                <div class="result-digit">0</div>
+                <div class="result-digit">0</div>
+                <div class="result-digit">0</div>
+                <div class="result-digit">0</div>
+            </div>
+            
+            <div class="status" id="statusMessage">Current odds: HI 5250 (5250) LO 4750</div>
+            
+            <div class="bet-controls">
+                <button type="button" id="startBtn">Start</button>
+                <button type="button" id="stopBtn">Stop</button>
+                <button type="button" id="resetBtn">Reset</button>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">BET ON</div>
+            <div class="checkbox-group">
+                <div>
+                    <input type="checkbox" id="hi" checked class="bet-type">
+                    <label for="hi" class="checkbox-label">HI</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="lo" class="bet-type">
+                    <label for="lo" class="checkbox-label">LO</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="alternate" class="bet-type">
+                    <label for="alternate" class="checkbox-label">ALTERNATE</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title">STOP BETTING AFTER</div>
+        <div class="form-row profit-loss-inputs">
+            <div class="label">PROFIT</div>
+            <input type="checkbox" id="profitCheck">
+            <input type="text" class="input-field" maxlength="12" id="profitTarget" value="0.00000001">
+        </div>
+        
+        <div class="form-row profit-loss-inputs">
+            <div class="label">LOSS</div>
+            <input type="checkbox" id="lossCheck">
+            <input type="text" class="input-field" maxlength="12" id="lossLimit" value="0.00000001">
+        </div>
+        
+        <div class="form-row">
+            <div class="label">RETURN TO BASE BET:</div>
+            <input type="checkbox" id="returnBase" checked>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">INCREASE BET BY:</div>
+            <input type="text" class="input-field" maxlength="6" style="width: 50px;" id="increaseBetPct" value="4">
+            <span>%</span>
+            <input type="checkbox" id="increaseBet">
+        </div>
+        
+        <div class="form-row">
+            <div class="label">CHANGE ODDS TO:</div>
+            <input type="text" class="input-field" maxlength="6" style="width: 50px;" id="newOdds" value="2">
+            <input type="checkbox" id="changeOdds">
+        </div>
+        
+        <div class="stats">
+            <div class="stats-row">
+                <span>Current Balance:</span>
+                <span id="currentBalance">0.05000000</span>
+            </div>
+            <div class="stats-row">
+                <span>ROLLS PLAYED:</span>
+                <span id="rollsPlayed">0</span>
+            </div>
+            <div class="stats-row">
+                <span>BIGGEST BET THIS SESSION:</span>
+                <span id="maxBetDisplay">0.00000000</span>
+            </div>
+            <div class="stats-row">
+                <span>BIGGEST WIN THIS SESSION:</span>
+                <span id="maxWinDisplay">0.00000000</span>
+            </div>
+            <div class="stats-row">
+                <span>BETTING P/L THIS SESSION:</span>
+                <span id="sessionPL">0.00000000</span>
+            </div>
+            <div class="stats-row">
+                <span>Total Bets:</span>
+                <span id="totalBets">0</span>
+            </div>
+            <div class="stats-row">
+                <span>Total Wins:</span>
+                <span id="totalWins">0</span>
+            </div>
+            <div class="stats-row">
+                <span>Total Losses:</span>
+                <span id="totalLosses">0</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let gameState = {
+            running: false,
+            hiWins: 0,
+            hiLosses: 0,
+            loWins: 0,
+            loLosses: 0,
+            currentBalance: 0.05,
+            initialBalance: 0.05,
+            totalBets: 0,
+            totalWins: 0,
+            totalLosses: 0,
+            maxWin: 0,
+            maxBet: 0,
+            currentBet: 0.00000025,
+            betMultiplier: 20,
+            targetProfit: 0.00000001,
+            lossLimit: 0.00000001,
+            betSpeed: 450,
+            rollsCount: 0,
+            maxRolls: 25502,
+            nonceA: 0,
+            nonceB: 0,
+            serverSeed: '',
+            clientSeed: '',
+            betType: 'HI',
+            alternateCounter: 0,
+            BASE: 10000,
+            FAIL: 0,
+            LO: 4750,
+            HI: 5250
+        };
+
+        // Elementos del DOM
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const statusMessage = document.getElementById('statusMessage');
+        const resultDisplay = document.getElementById('resultDisplay').children;
+        const currentBalanceEl = document.getElementById('currentBalance');
+        const totalBetsEl = document.getElementById('totalBets');
+        const totalWinsEl = document.getElementById('totalWins');
+        const totalLossesEl = document.getElementById('totalLosses');
+        const maxWinDisplay = document.getElementById('maxWinDisplay');
+        const maxBetDisplay = document.getElementById('maxBetDisplay');
+        const speedControl = document.getElementById('speedControl');
+        const speedValue = document.getElementById('speedValue');
+        const betTypeCheckboxes = document.querySelectorAll('.bet-type');
+        const rollsPlayedEl = document.getElementById('rollsPlayed');
+        const sessionPLL = document.getElementById('sessionPL');
+        const profitCheck = document.getElementById('profitCheck');
+        const lossCheck = document.getElementById('lossCheck');
+
+        // Inicializar eventos
+        function initializeEvents() {
+            betTypeCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        betTypeCheckboxes.forEach(cb => {
+                            if (cb !== this) cb.checked = false;
+                        });
+                        gameState.betType = this.id.toUpperCase();
+                        if (this.id === 'alternate') gameState.alternateCounter = 0;
+                    } else {
+                        this.checked = true;
+                    }
+                });
+            });
+
+            startBtn.addEventListener('click', startGame);
+            stopBtn.addEventListener('click', stopGame);
+            resetBtn.addEventListener('click', resetGame);
+            speedControl.addEventListener('input', updateSpeed);
+            document.getElementById('betOdds').addEventListener('change', updateGameOdds);
+        }
+
+        function updateGameOdds() {
+            const betOdds = parseFloat(document.getElementById('betOdds').value) || 2.00;
+            gameState.FAIL = 0.95 / betOdds;
+            gameState.LO = gameState.FAIL * gameState.BASE;
+            gameState.HI = gameState.BASE - gameState.LO;
+            updateUI();
+        }
+
+        function generateHexString(length) {
+            let result = '';
+            const characters = '0123456789abcdef';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+
+        function generateDiceResult() {
+            gameState.nonceA++;
+            gameState.nonceB++;
+            
+            if (gameState.totalBets % 10 === 0) {
+                gameState.serverSeed = generateHexString(32);
+                gameState.clientSeed = generateHexString(16);
+            }
+            
+            const combinedString = `${gameState.nonceA}:${gameState.serverSeed}:${gameState.clientSeed}:${gameState.nonceB}`;
+            let hash = 0;
+            for (let i = 0; i < combinedString.length; i++) {
+                const char = combinedString.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            
+            return Math.abs(hash) % 10000;
+        }
+
+        function updateResultDisplay(result) {
+            const resultStr = result.toString().padStart(4, '0');
+            for (let i = 0; i < 4; i++) {
+                resultDisplay[i].textContent = resultStr[i];
+            }
+        }
+
+        function updateUI() {
+            currentBalanceEl.textContent = gameState.currentBalance.toFixed(8);
+            totalBetsEl.textContent = gameState.totalBets;
+            totalWinsEl.textContent = gameState.totalWins;
+            totalLossesEl.textContent = gameState.totalLosses;
+            maxWinDisplay.textContent = gameState.maxWin.toFixed(8);
+            maxBetDisplay.textContent = gameState.maxBet.toFixed(8);
+            rollsPlayedEl.textContent = gameState.rollsCount;
+            sessionPLL.textContent = (gameState.currentBalance - gameState.initialBalance).toFixed(8);
+            
+            if (!gameState.running) {
+                statusMessage.textContent = `Current odds: HI ${gameState.HI.toFixed(0)} (${(10000-gameState.LO).toFixed(0)}) LO ${gameState.LO.toFixed(0)}`;
+                statusMessage.className = 'status';
+            }
+        }
+
+        function initGame() {
+            gameState.currentBalance = 0.05;
+            gameState.initialBalance = 0.05;
+            gameState.currentBet = parseFloat(document.getElementById('baseBet').value) || 0.00000025;
+            gameState.betMultiplier = parseFloat(document.getElementById('maxBetWin').value) || 20;
+            gameState.targetProfit = parseFloat(document.getElementById('profitTarget').value) || 0;
+            gameState.lossLimit = parseFloat(document.getElementById('lossLimit').value) || 0;
+            gameState.betSpeed = parseInt(speedControl.value);
+            gameState.maxRolls = parseInt(document.getElementById('numRolls').value) || 25502;
+            
+            updateGameOdds();
+            
+            gameState.nonceA = Math.floor(Math.random() * 1000000);
+            gameState.nonceB = Math.floor(Math.random() * 1000000);
+            gameState.serverSeed = generateHexString(32);
+            gameState.clientSeed = generateHexString(16);
+            
+            if (document.getElementById('hi').checked) {
+                gameState.betType = 'HI';
+            } else if (document.getElementById('lo').checked) {
+                gameState.betType = 'LO';
+            } else if (document.getElementById('alternate').checked) {
+                gameState.betType = 'ALTERNATE';
+                gameState.alternateCounter = 0;
+            }
+            
+            updateUI();
+        }
+
+        async function gameLoop() {
+            while (gameState.running) {
+                if (gameState.currentBalance < gameState.currentBet) {
+                    statusMessage.textContent = "Insufficient balance";
+                    gameState.running = false;
+                    break;
+                }
+                
+                if (profitCheck.checked && gameState.targetProfit > 0 && 
+                    (gameState.currentBalance - gameState.initialBalance) >= gameState.targetProfit) {
+                    statusMessage.textContent = "Target profit reached";
+                    gameState.running = false;
+                    break;
+                }
+                
+                if (lossCheck.checked && gameState.lossLimit > 0 && 
+                    (gameState.initialBalance - gameState.currentBalance) >= gameState.lossLimit) {
+                    statusMessage.textContent = "Loss limit reached";
+                    gameState.running = false;
+                    break;
+                }
+                
+                if (gameState.rollsCount >= gameState.maxRolls) {
+                    statusMessage.textContent = "Maximum rolls reached";
+                    gameState.running = false;
+                    break;
+                }
+                
+                let currentBetType = gameState.betType;
+                if (currentBetType === 'ALTERNATE') {
+                    currentBetType = (gameState.alternateCounter % 2 === 0) ? 'LO' : 'HI';
+                    gameState.alternateCounter++;
+                }
+                
+                const result = generateDiceResult();
+                updateResultDisplay(result);
+                
+                const isWin = (currentBetType === 'LO' && result < gameState.LO) || 
+                              (currentBetType === 'HI' && result >= gameState.HI);
+                
+                if (isWin) {
+                    const winAmount = gameState.currentBet * (parseFloat(document.getElementById('betOdds').value) - 1);
+                    gameState.currentBalance += winAmount;
+                    gameState.totalWins++;
+                    
+                    if (currentBetType === 'HI') gameState.hiWins++;
+                    else gameState.loWins++;
+                    
+                    if (winAmount > gameState.maxWin) gameState.maxWin = winAmount;
+                    
+                    statusMessage.textContent = `You BET ${currentBetType} (${currentBetType === 'HI' ? gameState.HI.toFixed(0) : gameState.LO.toFixed(0)}) so you win ${winAmount.toFixed(8)}!`;
+                    statusMessage.className = 'status win';
+                    
+                    if (document.getElementById('returnBase').checked) {
+                        gameState.currentBet = parseFloat(document.getElementById('baseBet').value) || 0.00000025;
+                    }
+                } else {
+                    gameState.currentBalance -= gameState.currentBet;
+                    gameState.totalLosses++;
+                    
+                    if (currentBetType === 'HI') gameState.hiLosses++;
+                    else gameState.loLosses++;
+                    
+                    statusMessage.textContent = `You BET ${currentBetType} (${currentBetType === 'HI' ? gameState.HI.toFixed(0) : gameState.LO.toFixed(0)}) so you lose ${gameState.currentBet.toFixed(8)}`;
+                    statusMessage.className = 'status lose';
+                    
+                    if (document.getElementById('increaseBet').checked) {
+                        const increasePct = parseFloat(document.getElementById('increaseBetPct').value) / 100 || 0;
+                        gameState.currentBet *= (1 + increasePct);
+                        
+                        if (document.getElementById('changeOdds').checked) {
+                            const newOdds = parseFloat(document.getElementById('newOdds').value) || 2.00;
+                            document.getElementById('betOdds').value = newOdds;
+                            updateGameOdds();
+                        }
+                    }
+                }
+                
+                if (gameState.currentBet > gameState.maxBet) {
+                    gameState.maxBet = gameState.currentBet;
+                }
+                
+                gameState.totalBets++;
+                gameState.rollsCount++;
+                
+                updateUI();
+                
+                await new Promise(resolve => setTimeout(resolve, gameState.betSpeed));
+            }
+        }
+
+        function startGame() {
+            if (!gameState.running) {
+                gameState.running = true;
+                initGame();
+                gameLoop();
+                statusMessage.textContent = "Running...";
+                statusMessage.className = 'status';
+            }
+        }
+
+        function stopGame() {
+            gameState.running = false;
+            statusMessage.textContent = "Stopped";
+            statusMessage.className = 'status';
+            updateUI();
+        }
+
+        function resetGame() {
+            gameState = {
+                running: false,
+                hiWins: 0,
+                hiLosses: 0,
+                loWins: 0,
+                loLosses: 0,
+                currentBalance: 0.05,
+                initialBalance: 0.05,
+                totalBets: 0,
+                totalWins: 0,
+                totalLosses: 0,
+                maxWin: 0,
+                maxBet: 0,
+                currentBet: 0.00000025,
+                betMultiplier: 20,
+                targetProfit: 0.00000001,
+                lossLimit: 0.00000001,
+                betSpeed: 450,
+                rollsCount: 0,
+                maxRolls: 25502,
+                nonceA: 0,
+                nonceB: 0,
+                serverSeed: '',
+                clientSeed: '',
+                betType: 'HI',
+                alternateCounter: 0,
+                BASE: 10000,
+                FAIL: 0,
+                LO: 4750,
+                HI: 5250
+            };
+            
+            document.getElementById('baseBet').value = '0.00000025';
+            document.getElementById('maxBetWin').value = '20';
+            document.getElementById('betOdds').value = '2.00';
+            document.getElementById('numRolls').value = '25502';
+            document.getElementById('increaseBetPct').value = '4';
+            document.getElementById('newOdds').value = '2';
+            document.getElementById('profitTarget').value = '0.00000001';
+            document.getElementById('lossLimit').value = '0.00000001';
+            
+            document.getElementById('hi').checked = true;
+            document.getElementById('lo').checked = false;
+            document.getElementById('alternate').checked = false;
+            document.getElementById('returnBase').checked = true;
+            document.getElementById('increaseBet').checked = false;
+            document.getElementById('changeOdds').checked = false;
+            profitCheck.checked = false;
+            lossCheck.checked = false;
+            
+            speedControl.value = '450';
+            speedValue.textContent = '450';
+            
+            for (let i = 0; i < 4; i++) {
+                resultDisplay[i].textContent = '0';
+            }
+            
+            updateGameOdds();
+            updateUI();
+        }
+
+        function updateSpeed() {
+            gameState.betSpeed = parseInt(speedControl.value);
+            speedValue.textContent = speedControl.value;
+        }
+
+        // Inicializar la aplicación
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeEvents();
+            resetGame();
+        });
+    </script>
+</body>
+</html>

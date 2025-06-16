@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Video</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-wrapper {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        video {
+            width: 100%;
+            display: block;
+        }
+        .video-message {
+            text-align: center;
+            margin-top: 15px;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-wrapper">
+        <video controls autoplay muted>
+            <source src="videos/welcome.mp4" type="video/mp4">
+            <source src="videos/welcome.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-message">
+            <p>Welcome to INTOFARM© Investments. Please select an option from the menu above.</p>
+        </div>
+    </div>
+</body>
+</html>

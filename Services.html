@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>INTOFARM©</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        h2, h3 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        h2 {
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        h3 {
+            margin: 25px 0 15px;
+            font-size: 22px;
+            color: #27ae60;
+        }
+        
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .plan {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .plan:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #27ae60;
+        }
+        
+        .plan-image {
+            display: block;
+            margin: 0 auto 20px;
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .plan-details {
+            margin-top: 20px;
+        }
+        
+        .plan-details p {
+            margin: 12px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .plan-details p:last-child {
+            border-bottom: none;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+        
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .multiplier {
+            font-size: 20px;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .divider {
+            border-top: 2px dashed #ddd;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+    
+<body> 
+    <div class="container">
+        <img class="hero-image" src="img/miniranch.png" alt="IntoFarm Ranch" width="1450" height="400"> 
+        
+        <div class="intro">
+            <h2>Standard or Premium</h2>
+            <h3>Investments Packages</h3>
+            <p><strong>You can invest money in one of the following accounts:</strong></p>
+        </div>
+        
+        <div class="plans-container">
+            <!-- Plan 1 -->
+            <div class="plan">
+                <h3>RANCH</h3>
+                <a href="Plan1.html"><img class="plan-image" src="img/favicon.png" alt="Mini Ranch"></a>
+                <div class="plan-details">
+                    <p><strong>PRICE:</strong> <span class="price">$20</span></p>
+                    <p>or invite two friends.</p>
+                    <div class="divider"></div>
+                    <p><strong>PRODUCT:</strong> 150 eggs (Non-renewable)</p>
+                    <div class="divider"></div>
+                    <p><strong>EXPECTED INCOME:</strong> $1 per 30 days</p>
+                    <div class="divider"></div>
+                    <p><strong>MULTIPLIER:</strong> N/A</p>
+                </div>
+            </div>
+            
+            <!-- Plan 2 -->
+            <div class="plan">
+                <h3>CHACRA</h3>
+                <a href="Plan2.html"><img class="plan-image" src="img/favicon2.png" alt="Chacra"></a>
+                <div class="plan-details">
+                    <p><strong>PRICE:</strong> <span class="price">$100</span></p>
+                    <div class="divider"></div>
+                    <p><strong>PRODUCT:</strong> 900 eggs</p>
+                    <div class="divider"></div>
+                    <p><strong>EXPECTED INCOME:</strong> $90 per month</p>
+                    <p>$180 for 60 days</p>
+                    <div class="divider"></div>
+                    <p><strong>MULTIPLIER:</strong> N/A</p>
+                </div>
+            </div>
+            
+            <!-- Plan 3 -->
+            <div class="plan">
+                <h3>TUNE</h3>
+                <a href="Plan3.html"><img class="plan-image" src="img/favicon3.png" alt="Standard"></a>
+                <div class="plan-details">
+                    <p><strong>PRICE:</strong> <span class="price">$400</span></p>
+                    <div class="divider"></div>
+                    <p><strong>PRODUCT:</strong> 3600 eggs per month</p>
+                    <div class="divider"></div>
+                    <p><strong>EXPECTED INCOME:</strong> $240 per month</p>
+                    <p>$720 for 90 days</p>
+                    <div class="divider"></div>
+                    <p><strong>MULTIPLIER:</strong> N/A</p>
+                </div>
+            </div>
+            
+            <!-- Plan 4 -->
+            <div class="plan">
+                <h3>PIGGY VERMUT</h3>
+                <a href="Plan4.html"><img class="plan-image" src="img/favicon4.png" alt="Classic"></a>
+                <div class="plan-details">
+                    <p><strong>PRICE:</strong> <span class="price">$800</span></p>
+                    <div class="divider"></div>
+                    <p><strong>PRODUCT:</strong> 7200 eggs</p>
+                    <div class="divider"></div>
+                    <p><strong>EXPECTED INCOME:</strong> $360 per month</p>
+                    <p>$1440 for 120 days</p>
+                    <div class="divider"></div>
+                    <p><strong>MULTIPLIER:</strong> <span class="multiplier">x3</span></p>
+                </div>
+            </div>
+            
+            <!-- Plan 5 -->
+            <div class="plan">
+                <h3>POURTRY JABALI</h3>
+                <a href="Plan5.html"><img class="plan-image" src="img/favicon5.png" alt="Vermut"></a>
+                <div class="plan-details">
+                    <p><strong>PRICE:</strong> <span class="price">$1500</span></p>
+                    <div class="divider"></div>
+                    <p><strong>PRODUCT:</strong> 16500 eggs</p>
+                    <div class="divider"></div>
+                    <p><strong>EXPECTED INCOME:</strong> $660 per month</p>
+                    <p>$3300 for 150 days</p>
+                    <div class="divider"></div>
+                    <p><strong>MULTIPLIER:</strong> <span class="multiplier">X3</span></p>
+                </div>
+            </div>
+            
+            <!-- Plan 6 -->
+            <div class="plan">
+                <h3>POURTRY LEGHORN</h3>
+                <a href="Plan6.html"><img class="plan-image" src="img/favicon5.png" alt="Poultry"></a>
+                <div class="plan-details">
+                    <p><strong>PRICE:</strong> <span class="price">$3000</span></p>
+                    <div class="divider"></div>
+                    <p><strong>PRODUCT:</strong> 36000 eggs</p>
+                    <div class="divider"></div>
+                    <p><strong>EXPECTED INCOME:</strong> $1200 per month</p>
+                    <p>$7200 for 180 days</p>
+                    <div class="divider"></div>
+                    <p><strong>MULTIPLIER:</strong> <span class="multiplier">X3</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
